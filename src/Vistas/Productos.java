@@ -26,21 +26,166 @@ public class Productos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextSearch = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableClientes = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(156, 162, 239));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
+        jLabel2.setText("Busqueda de producto");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 230, 70));
+
+        jTextSearch.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        jTextSearch.setForeground(new java.awt.Color(153, 153, 153));
+        jTextSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextSearch.setText("Buscar por ID, nombre ó categoria");
+        jTextSearch.setBorder(null);
+        jTextSearch.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextSearchFocusLost(evt);
+            }
+        });
+        jTextSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextSearchMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTextSearchMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextSearchMouseReleased(evt);
+            }
+        });
+        jTextSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextSearchActionPerformed(evt);
+            }
+        });
+        jTextSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextSearchKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextSearchKeyTyped(evt);
+            }
+        });
+        jPanel1.add(jTextSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 570, 40));
+
+        tableClientes.setBackground(new java.awt.Color(187, 227, 222));
+        tableClientes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tableClientes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tableClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID producto", "Descripción", "Categoria", "Precio venta", "Cantidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tableClientes.setRowHeight(30);
+        tableClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tableClientes.setShowGrid(true);
+        tableClientes.setShowVerticalLines(false);
+        tableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableClientesMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableClientes);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 760, 330));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 40, -1));
+
+        jLabel1.setText("AÑADIR");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
+        jButton2.setToolTipText("");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 50, -1));
+
+        jLabel3.setText("ELIMINAR");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextSearchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextSearchFocusLost
+        jTextSearch.setText("Buscar por ID , nombre ó categoria");
+        jTextSearch.setForeground(Color.gray);
+    }//GEN-LAST:event_jTextSearchFocusLost
+
+    private void jTextSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMouseClicked
+        jTextSearch.setText("");
+    }//GEN-LAST:event_jTextSearchMouseClicked
+
+    private void jTextSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMousePressed
+        jTextSearch.setText("");
+        jTextSearch.setForeground(Color.black);
+    }//GEN-LAST:event_jTextSearchMousePressed
+
+    private void jTextSearchMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMouseReleased
+
+    }//GEN-LAST:event_jTextSearchMouseReleased
+
+    private void jTextSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextSearchActionPerformed
+
+    private void jTextSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSearchKeyReleased
+        buscar();
+    }//GEN-LAST:event_jTextSearchKeyReleased
+
+    private void jTextSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSearchKeyTyped
+
+    }//GEN-LAST:event_jTextSearchKeyTyped
+
+    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClientesMouseClicked
+        datoSeleccionado = tableClientes.rowAtPoint(evt.getPoint());
+    }//GEN-LAST:event_tableClientesMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +223,14 @@ public class Productos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextSearch;
+    private javax.swing.JTable tableClientes;
     // End of variables declaration//GEN-END:variables
 }
