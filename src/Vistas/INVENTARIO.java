@@ -54,7 +54,7 @@ public class INVENTARIO extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         tableGarantias.setBackground(new java.awt.Color(187, 227, 222));
         tableGarantias.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
