@@ -1,13 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo;
 
-/**
- *
- * @author rodri
- */
-public class POJOEmpleado {
+public class POJOEmpleado extends POJOPersona {
     
+    String cargo;
+
+    public POJOEmpleado(String cargo, String nombre, String apellido, String telefono) {
+        super(nombre, apellido, telefono);
+        this.cargo = cargo;
+        
+    }
+    
+   public POJOEmpleado(){    
+   }
+   
+   public String getcargo(){
+       return cargo;
+   }
+   
+   public void setcargo(String cargo){
+       this.cargo = cargo;
+   }
 }
