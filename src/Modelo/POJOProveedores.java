@@ -1,7 +1,7 @@
-package Modelo;
-
-public class POJOProveedores extends POJOPersona {
-    
-    String nombreEmpresa;
-    
-}
+//package Modelo;
+//
+//public class POJOProveedores extends POJOPersona {
+//    
+//    String nombreEmpresa;
+//    
+//}

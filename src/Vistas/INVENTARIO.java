@@ -116,7 +116,7 @@ public class INVENTARIO extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void tableGarantiasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableGarantiasMouseClicked
-        datoSeleccionado = tableGarantias.rowAtPoint(evt.getPoint());
+//        datoSeleccionado = tableGarantias.rowAtPoint(evt.getPoint());
     }//GEN-LAST:event_tableGarantiasMouseClicked
 
     /**

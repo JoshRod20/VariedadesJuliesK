@@ -1,23 +1,27 @@
 package Vistas;
 
+//import Controlador.Conexion.Controlador.CRUDProducto;
+//import Controlador.Conexion.Controlador.CRUDProducto;
+//import Controlador.Conexion.Controlador.CRUDProducto;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Productos extends javax.swing.JFrame {
 
     public Productos() {
         initComponents();
-        mostrar(); //llamado al método mostrar ()
+//        mostrar(); //llamado al método mostrar ()
     }
-    public void mostrar(){//Método mostrar 
-        try {
-            DefaultTableModel modelo;
-                CRUDProducto pro = new CRUDProducto();//objeto de la clase CRUDProducto
-                modelo = pro.mostrarDatos();
-                
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }
+//    public void mostrar(){//Método mostrar 
+//        try {
+//            DefaultTableModel modelo;
+//                CRUDProducto pro = new CRUDProducto();//objeto de la clase CRUDProducto
+//                modelo = pro.mostrarDatos();
+//                
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+//    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -27,7 +31,7 @@ public class Productos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtBusqueda = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tableClientes = new javax.swing.JTable();
+        tableProducto = new javax.swing.JTable();
         btnAñadir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
@@ -80,10 +84,10 @@ public class Productos extends javax.swing.JFrame {
         });
         jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 570, 40));
 
-        tableClientes.setBackground(new java.awt.Color(187, 227, 222));
-        tableClientes.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        tableClientes.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tableClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tableProducto.setBackground(new java.awt.Color(187, 227, 222));
+        tableProducto.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tableProducto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tableProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -102,16 +106,16 @@ public class Productos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        tableClientes.setRowHeight(30);
-        tableClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        tableClientes.setShowGrid(true);
-        tableClientes.setShowVerticalLines(false);
-        tableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+        tableProducto.setRowHeight(30);
+        tableProducto.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tableProducto.setShowGrid(true);
+        tableProducto.setShowVerticalLines(false);
+        tableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableClientesMouseClicked(evt);
+                tableProductoMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(tableClientes);
+        jScrollPane1.setViewportView(tableProducto);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 760, 330));
 
@@ -156,8 +160,8 @@ public class Productos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtBusquedaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBusquedaFocusLost
-        txtBusqueda.setText("Buscar por ID , nombre ó categoria");
-        txtBusqueda.setForeground(Color.gray);
+//        txtBusqueda.setText("Buscar por ID , nombre ó categoria");
+//        txtBusqueda.setForeground(Color.gray);
     }//GEN-LAST:event_txtBusquedaFocusLost
 
     private void txtBusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaMouseClicked
@@ -165,8 +169,8 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusquedaMouseClicked
 
     private void txtBusquedaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaMousePressed
-        txtBusqueda.setText("");
-        txtBusqueda.setForeground(Color.black);
+//        txtBusqueda.setText("");
+//        txtBusqueda.setForeground(Color.black);
     }//GEN-LAST:event_txtBusquedaMousePressed
 
     private void txtBusquedaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBusquedaMouseReleased
@@ -178,16 +182,16 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtBusquedaActionPerformed
 
     private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
-        buscar();
+//        buscar();
     }//GEN-LAST:event_txtBusquedaKeyReleased
 
     private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
 
     }//GEN-LAST:event_txtBusquedaKeyTyped
 
-    private void tableClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableClientesMouseClicked
-        datoSeleccionado = tableClientes.rowAtPoint(evt.getPoint());
-    }//GEN-LAST:event_tableClientesMouseClicked
+    private void tableProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProductoMouseClicked
+//        datoSeleccionado = tableProducto.rowAtPoint(evt.getPoint());
+    }//GEN-LAST:event_tableProductoMouseClicked
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
         // TODO add your handling code here:
@@ -195,20 +199,20 @@ public class Productos extends javax.swing.JFrame {
 
     private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
         
-        try {
-            
-            DefaultTableModel modelo;
-            CRUDProducto pro = new CRUDProducto();
-            modelo = pro.buscarDatos(txtBusqueda.getText());
-            if (txtBusqueda.getText().equals("")){
-                JOptionPane.showMessageDialog(null, "Escriba el dato a buscar");
-                mostrar();
-            }else{
-                tableProducto.setModel(modelo);
-            }
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        try {
+//            
+//            DefaultTableModel modelo;
+//            CRUDProducto pro = new CRUDProducto();
+//            modelo = pro.buscarDatos(txtBusqueda.getText());
+//            if (txtBusqueda.getText().equals("")){
+//                JOptionPane.showMessageDialog(null, "Escriba el dato a buscar");
+//                mostrar();
+//            }else{
+//                tableProducto.setModel(modelo);
+//            }
+//        }catch (Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
     /**
@@ -255,7 +259,7 @@ public class Productos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tableClientes;
+    private javax.swing.JTable tableProducto;
     private javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
 }

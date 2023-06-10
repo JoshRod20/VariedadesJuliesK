@@ -10,8 +10,7 @@ public class POJOEmpleado extends POJOPersona {
         
     }
     
-   public POJOEmpleado(){    
-   }
+   
    
    public String getcargo(){
        return cargo;
