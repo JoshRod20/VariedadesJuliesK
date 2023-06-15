@@ -8,15 +8,17 @@ import javax.swing.table.DefaultTableModel;
 
 public class Productos extends javax.swing.JFrame {
 
-    public Productos() {
-        initComponents();
+//    public Productos() {
+//        initComponents();
 //        mostrar(); //llamado al método mostrar ()
-    }
+//    }
+//    
 //    public void mostrar(){//Método mostrar 
 //        try {
 //            DefaultTableModel modelo;
-//                CRUDProducto pro = new CRUDProducto();//objeto de la clase CRUDProducto
-//                modelo = pro.mostrarDatos();
+//                CRUDProducto prod = new CRUDProducto();//objeto de la clase CRUDProducto
+//                modelo = prod.mostrarDatos();
+//                tableProducto.setModel(modelo);
 //                
 //        }catch(Exception e){
 //            JOptionPane.showMessageDialog(null, e);
@@ -33,20 +35,17 @@ public class Productos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProducto = new javax.swing.JTable();
         btnAñadir = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         btnBusqueda = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(156, 162, 239));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel2.setText("Busqueda de producto");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 230, 70));
 
         txtBusqueda.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         txtBusqueda.setForeground(new java.awt.Color(153, 153, 153));
@@ -82,7 +81,6 @@ public class Productos extends javax.swing.JFrame {
                 txtBusquedaKeyTyped(evt);
             }
         });
-        jPanel1.add(txtBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 570, 40));
 
         tableProducto.setBackground(new java.awt.Color(187, 227, 222));
         tableProducto.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -117,25 +115,17 @@ public class Productos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableProducto);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 760, 330));
-
         btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
+        btnAñadir.setText("AÑADIR");
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAñadirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, 40, -1));
-
-        jLabel1.setText("AÑADIR");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, -1, -1));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
+        btnEliminar.setText("ELIMINAR");
         btnEliminar.setToolTipText("");
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, 50, -1));
-
-        jLabel3.setText("ELIMINAR");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -143,13 +133,61 @@ public class Productos extends javax.swing.JFrame {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, 50, 40));
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/previous.png"))); // NOI18N
+        jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButton2)
+                .addGap(134, 134, 134)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(btnAñadir, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAñadir)
+                            .addComponent(btnEliminar))))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,26 +232,31 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_tableProductoMouseClicked
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        // TODO add your handling code here:
+        AñadirProd apro = new AñadirProd();
+        apro.setVisible(true);
     }//GEN-LAST:event_btnAñadirActionPerformed
 
     private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-        
 //        try {
 //            
 //            DefaultTableModel modelo;
-//            CRUDProducto pro = new CRUDProducto();
-//            modelo = pro.buscarDatos(txtBusqueda.getText());
+//            CRUDProducto prod = new CRUDProducto;
+//            modelo = prod.buscarDatos(txtBusqueda.getText());
 //            if (txtBusqueda.getText().equals("")){
 //                JOptionPane.showMessageDialog(null, "Escriba el dato a buscar");
 //                mostrar();
-//            }else{
+//            }else {
 //                tableProducto.setModel(modelo);
 //            }
+//            
 //        }catch (Exception e){
 //            JOptionPane.showMessageDialog(null, e);
 //        }
     }//GEN-LAST:event_btnBusquedaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -254,9 +297,8 @@ public class Productos extends javax.swing.JFrame {
     private javax.swing.JButton btnAñadir;
     private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tableProducto;

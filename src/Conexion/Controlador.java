@@ -1,4 +1,4 @@
-package Controlador.Conexion;
+package Conexion;
 
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -19,7 +19,7 @@ public class Controlador {
         } catch (SQLException e) {
             System.out.println("Error en la conexión: "+e);
         }
+
         return null;
     }  
 }
-

@@ -33,6 +33,7 @@ public class INVENTARIO extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableGarantias = new javax.swing.JTable();
+        btInvVol = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -46,7 +47,7 @@ public class INVENTARIO extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(7, 81, 74));
         jLabel2.setText("INVENTARIOS");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, 20));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS LOS PRODUCTOS", "MAS VENDIDOS", "MENOS VENDIDOS", " " }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +55,7 @@ public class INVENTARIO extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         tableGarantias.setBackground(new java.awt.Color(187, 227, 222));
         tableGarantias.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -82,6 +83,16 @@ public class INVENTARIO extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tableGarantias);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 660, 280));
+
+        btInvVol.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btInvVol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/previous.png"))); // NOI18N
+        btInvVol.setText("Volver");
+        btInvVol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInvVolActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btInvVol, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -118,6 +129,11 @@ public class INVENTARIO extends javax.swing.JFrame {
     private void tableGarantiasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableGarantiasMouseClicked
 //        datoSeleccionado = tableGarantias.rowAtPoint(evt.getPoint());
     }//GEN-LAST:event_tableGarantiasMouseClicked
+
+    private void btInvVolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInvVolActionPerformed
+        Lobby lob = new Lobby();
+        lob.setVisible(true);
+    }//GEN-LAST:event_btInvVolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +172,7 @@ public class INVENTARIO extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btInvVol;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JInternalFrame jInternalFrame1;
