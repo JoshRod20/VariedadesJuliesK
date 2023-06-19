@@ -42,7 +42,7 @@ public class AñadirProd extends javax.swing.JFrame {
         tableProducto = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btGPro = new javax.swing.JButton();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
@@ -111,12 +111,12 @@ public class AñadirProd extends javax.swing.JFrame {
 
         jLabel10.setText("Cantidad");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btGPro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btGPro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/guardar.png"))); // NOI18N
+        btGPro.setText("Guardar");
+        btGPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btGProActionPerformed(evt);
             }
         });
 
@@ -172,7 +172,7 @@ public class AñadirProd extends javax.swing.JFrame {
                             .addComponent(btvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addGap(67, 67, 67)
-                            .addComponent(jButton1))))
+                            .addComponent(btGPro))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(46, 46, 46))
@@ -220,7 +220,7 @@ public class AñadirProd extends javax.swing.JFrame {
                             .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
                         .addGap(31, 31, 31)
-                        .addComponent(jButton1)
+                        .addComponent(btGPro)
                         .addGap(31, 31, 31)
                         .addComponent(btvolver)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -253,9 +253,10 @@ public class AñadirProd extends javax.swing.JFrame {
         //        datoSeleccionado = tableProducto.rowAtPoint(evt.getPoint());
     }//GEN-LAST:event_tableProductoMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btGProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGProActionPerformed
+        Ventas ven = new Ventas();
+        ven.setVisible(true);
+    }//GEN-LAST:event_btGProActionPerformed
 
     private void btvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvolverActionPerformed
         Productos prod = new Productos();
@@ -298,8 +299,8 @@ public class AñadirProd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGPro;
     private javax.swing.JButton btvolver;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

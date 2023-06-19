@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 public class Controlador {
-    private final String url="jdbc:sqlserver://localhost:1434;databaseName=VariedadesJuliesk_BD;"
+    private final String url="jdbc:sqlserver://localhost:1434;databaseName=VJuliesk_BD;"
             + "integratedSecurity=true;" 
             + "encrypt=true;trustServerCertificate=true;";
             
