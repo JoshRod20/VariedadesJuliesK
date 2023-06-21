@@ -259,7 +259,7 @@ public class AñadirProd extends javax.swing.JFrame {
     }//GEN-LAST:event_btGProActionPerformed
 
     private void btvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btvolverActionPerformed
-        Productos prod = new Productos();
+        GestionarProductos prod = new GestionarProductos();
         prod.setVisible(true);
     }//GEN-LAST:event_btvolverActionPerformed
 

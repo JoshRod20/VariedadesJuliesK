@@ -1,6 +1,7 @@
 package Controlador;
 
 import Conexion.Controlador;
+import Modelo.POJOProducto;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,7 +46,7 @@ public class CRUDProducto {
         }
     }
     
-    public DefaultTableModel mostrarProductos() {
+    public DefaultTableModel MostrarProductos() {
         ResultSet rs;
         DefaultTableModel modelo;
         String[] titulos = {"idProducto", "precioVenta", "descripcion", "categoria", "cantidad"};
@@ -71,15 +72,14 @@ public class CRUDProducto {
             return null;
         }
                                        
-
-    public void Guardar(Producto pro1) {
+    }
+    
+    public void Guardar(POJOProducto pro1) {
         try {
             CallableStatement cbst = cn.prepareCall("{call InsertarProducto(?,?,?,?,?)}");
-            cbst.setString(1, pro1.getidProducto());
-            cbst.setString(2, pro1.getprecioVenta());
-            cbst.setString(3, pro1.getdescripcion());
-            cbst.setString(4, pro1.getcategoria());
-            cbst.setString(5, pro1.getcantidad());
+            cbst.setString(1, pro1.getIDProducto());
+            cbst.setString(2, pro1.getMarcas());
+            cbst.setString(3, pro1.getTallas());
             cbst.executeUpdate();
 
         } catch (SQLException e) {
