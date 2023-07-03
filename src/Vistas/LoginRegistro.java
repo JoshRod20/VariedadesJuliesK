@@ -37,7 +37,8 @@ public class LoginRegistro extends javax.swing.JFrame {
         btrvolver = new javax.swing.JButton();
         btrguardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(156, 162, 239));
 

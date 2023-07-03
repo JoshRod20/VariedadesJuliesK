@@ -5,9 +5,10 @@
         <group>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Vistas/Lobby.java</file>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Controlador/CRUDProducto.java</file>
-            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Conexion/Controlador.java</file>
+            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Modelo/POJOCategoria.java</file>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Modelo/POJOProducto.java</file>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Vistas/GestionarProductos.java</file>
+            <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Vistas/Proveedores.java</file>
             <file>file:/C:/Users/rodri/OneDrive/Documentos/NetBeansProjects/VariedadesJuliesK/src/Vistas/Productos.java</file>
         </group>
     </open-files>

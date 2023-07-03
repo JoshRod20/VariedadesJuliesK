@@ -9,7 +9,16 @@ public class Lobby extends javax.swing.JFrame {
 
     
     public Lobby() {
+        
         initComponents();
+        
+        this.setExtendedState(Lobby.MAXIMIZED_VERT);
+        this.setTitle("Sistema de Gestion de productos Variedades JuliesK");
+        this.setLayout(null);
+        
+        int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+        int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+        jdpane.setBounds(0, 0, ancho, (alto));
     }
 
  
@@ -20,7 +29,7 @@ public class Lobby extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jPanel1 = new javax.swing.JPanel();
+        jdpane = new javax.swing.JPanel();
         btInventario = new javax.swing.JButton();
         btVentas = new javax.swing.JButton();
         btReportes = new javax.swing.JButton();
@@ -35,12 +44,13 @@ public class Lobby extends javax.swing.JFrame {
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setUndecorated(true);
+        setResizable(false);
+        setType(java.awt.Window.Type.UTILITY);
 
         jInternalFrame1.setVisible(true);
 
-        jPanel1.setBackground(new java.awt.Color(156, 162, 239));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jdpane.setBackground(new java.awt.Color(156, 162, 239));
+        jdpane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/AbonoGrande.png"))); // NOI18N
         btInventario.addActionListener(new java.awt.event.ActionListener() {
@@ -48,7 +58,7 @@ public class Lobby extends javax.swing.JFrame {
                 btInventarioActionPerformed(evt);
             }
         });
-        jPanel1.add(btInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
+        jdpane.add(btInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
 
         btVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/cajero.png"))); // NOI18N
         btVentas.addActionListener(new java.awt.event.ActionListener() {
@@ -56,30 +66,30 @@ public class Lobby extends javax.swing.JFrame {
                 btVentasActionPerformed(evt);
             }
         });
-        jPanel1.add(btVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        jdpane.add(btVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         btReportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/ReportesGrandes_1.png"))); // NOI18N
-        jPanel1.add(btReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
+        jdpane.add(btReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("VENTAS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
+        jdpane.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("INVENTARIO");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
+        jdpane.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("REPORTES");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
+        jdpane.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("PRODUCTO");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
+        jdpane.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("PROVEEDORES");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
+        jdpane.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, -1, -1));
 
         btProve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/clienteGrande.png"))); // NOI18N
         btProve.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +97,7 @@ public class Lobby extends javax.swing.JFrame {
                 btProveActionPerformed(evt);
             }
         });
-        jPanel1.add(btProve, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
+        jdpane.add(btProve, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, -1, -1));
 
         btProd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/conjunto-accesoriosbb.png"))); // NOI18N
         btProd.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +105,7 @@ public class Lobby extends javax.swing.JFrame {
                 btProdActionPerformed(evt);
             }
         });
-        jPanel1.add(btProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
+        jdpane.add(btProd, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, -1, -1));
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
@@ -103,13 +113,13 @@ public class Lobby extends javax.swing.JFrame {
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+                .addComponent(jdpane, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                .addComponent(jdpane, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -195,6 +205,6 @@ public class Lobby extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
+    javax.swing.JPanel jdpane;
     // End of variables declaration//GEN-END:variables
 }

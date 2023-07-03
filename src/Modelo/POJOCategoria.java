@@ -1,21 +1,34 @@
 package Modelo;
 
 public class POJOCategoria {
-    private String IDCategoria;
+
+    private int IDCategoria;
     private String Descripcion;
     private String Nombre;
 
-    public POJOCategoria(String IDCategoria, String Descripcion, String Nombre) {
+    public POJOCategoria() {
+    }
+
+    public POJOCategoria(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public POJOCategoria(int IDCategoria, String Nombre) {
+        this.IDCategoria = IDCategoria;
+        this.Nombre = Nombre;
+    }
+
+    public POJOCategoria(int IDCategoria, String Descripcion, String Nombre) {
         this.IDCategoria = IDCategoria;
         this.Descripcion = Descripcion;
         this.Nombre = Nombre;
     }
 
-    public String getIDCategoria() {
+    public int getIDCategoria() {
         return IDCategoria;
     }
 
-    public void setIDCategoria(String IDCategoria) {
+    public void setIDCategoria(int IDCategoria) {
         this.IDCategoria = IDCategoria;
     }
 
@@ -34,5 +47,9 @@ public class POJOCategoria {
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
-    
+
+    @Override
+    public String toString(){
+        return IDCategoria + " - "+ Nombre;
+    }
 }
