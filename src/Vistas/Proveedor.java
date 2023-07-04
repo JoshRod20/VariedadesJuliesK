@@ -1,34 +1,20 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+ */
 package Vistas;
 
-import Controlador.CRUDProveedores;
-import Modelo.POJOProveedores;
-import java.awt.HeadlessException;
-import javax.swing.JOptionPane;
-
-public class Proveedores extends javax.swing.JFrame {
+/**
+ *
+ * @author rodri
+ */
+public class Proveedor extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form Proveedores
+     * Creates new form Proveedor
      */
-    public Proveedores() {
+    public Proveedor() {
         initComponents();
-    }
-
-    public void guardarProveedores() {
-        CRUDProveedores cp = new CRUDProveedores();
-        POJOProveedores prov1 = new POJOProveedores(NEmpresa.getText(),
-                NombreProv.getText(),
-                ApellidoProv.getText(),
-                NTelefono.getText());
-        cp.insertarProveedores(prov1);
-
-    }
-
-    public void limpiar() {
-        NombreProv.setText("");
-        ApellidoProv.setText("");
-        NEmpresa.setText("");
-        NTelefono.setText("");
     }
 
     /**
@@ -58,9 +44,6 @@ public class Proveedores extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jTextTelefono = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(156, 162, 239));
 
@@ -227,11 +210,11 @@ public class Proveedores extends javax.swing.JFrame {
                         .addComponent(jTextTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(jpanelProvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GuardarProv)
                     .addComponent(btActualizarProv))
-                .addGap(85, 85, 85))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -248,14 +231,13 @@ public class Proveedores extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 30, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(170, 170, 170))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jpanelProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                .addGap(0, 155, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(170, 170, 170))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpanelProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,9 +251,9 @@ public class Proveedores extends javax.swing.JFrame {
                         .addComponent(jLabel1)))
                 .addGap(15, 15, 15)
                 .addComponent(jLabel3)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jpanelProv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -288,15 +270,91 @@ public class Proveedores extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void NombreProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreProvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreProvActionPerformed
+
+    private void NombreProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NombreProvKeyTyped
+        //        char car = evt.getKeyChar();
+        //        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
+            //            && car != 'á' //Minúsculas
+            //            && car != 'é'
+            //            && car != 'í'
+            //            && car != 'ó'
+            //            && car != 'ú'
+            //            && car != 'Á' //Mayúsculas
+            //            && car != 'É'
+            //            && car != 'Í'
+            //            && car != 'Ó'
+            //            && car != 'Ú'
+            //            && car != 'Ü'
+            //            && car != 'ü'
+            //            && car != 'Ñ'
+            //            && car != 'ñ'
+            //            && (car != (char) KeyEvent.VK_SPACE)) {
+            //            evt.consume();
+            //        }
+    }//GEN-LAST:event_NombreProvKeyTyped
+
+    private void NEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NEmpresaKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NEmpresaKeyTyped
+
+    private void ApellidoProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ApellidoProvKeyTyped
+        //        char car = evt.getKeyChar();
+        //        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
+            //            && car != 'á' //Minúsculas
+            //            && car != 'é'
+            //            && car != 'í'
+            //            && car != 'ó'
+            //            && car != 'ú'
+            //            && car != 'Á' //Mayúsculas
+            //            && car != 'É'
+            //            && car != 'Í'
+            //            && car != 'Ó'
+            //            && car != 'Ú'
+            //            && car != 'Ü'
+            //            && car != 'ü'
+            //            && car != 'Ñ'
+            //            && car != 'ñ'
+            //            && (car != (char) KeyEvent.VK_SPACE)) {
+            //            evt.consume();
+            //        }
+    }//GEN-LAST:event_ApellidoProvKeyTyped
+
+    private void GuardarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProvActionPerformed
+        CRUDProveedores cpr = new CRUDProveedores();
+        try {
+            if ((NombreProv.getText().equals(""))
+                || (ApellidoProv.getText().equals(""))
+                || (NEmpresa.getText().equals(""))
+                || (NTelefono.getText().equals(""))) {
+                JOptionPane.showMessageDialog(null, "Tiene datos vacios");
+            } else {
+
+                guardarProveedores();
+                limpiar();
+                JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
+
+                //GestionarProveedores prove = new GestionarProveedores();
+                //prove.setVisible(true);
+                //  Proveedores.this.dispose();
+
+            }
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, "error: " + e);
+        }
+    }//GEN-LAST:event_GuardarProvActionPerformed
+
     private void btActualizarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarProvActionPerformed
         try {
             if ((NombreProv.getText().equals(""))
-                    || (ApellidoProv.getText().equals(""))
-                    || (NEmpresa.getText().equals(""))
-                    || (NTelefono.getText().equals(""))) {
+                || (ApellidoProv.getText().equals(""))
+                || (NEmpresa.getText().equals(""))
+                || (NTelefono.getText().equals(""))) {
                 JOptionPane.showMessageDialog(null, "Tiene datos vacíos");
             } else {
-//                editarProv();
+                //                editarProv();
                 JOptionPane.showMessageDialog(null, "Datos Actualizados Correctamente");
                 dispose();
 
@@ -309,120 +367,10 @@ public class Proveedores extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btActualizarProvActionPerformed
 
-    private void GuardarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarProvActionPerformed
-        CRUDProveedores cpr = new CRUDProveedores();
-        try {
-            if ((NombreProv.getText().equals(""))
-                    || (ApellidoProv.getText().equals(""))
-                    || (NEmpresa.getText().equals(""))
-                    || (NTelefono.getText().equals(""))) {
-                JOptionPane.showMessageDialog(null, "Tiene datos vacios");
-            } else {
-
-                guardarProveedores();
-                limpiar();
-                JOptionPane.showMessageDialog(null, "Datos guardados correctamente");
-
-                //GestionarProveedores prove = new GestionarProveedores();
-                //prove.setVisible(true);
-              //  Proveedores.this.dispose();
-
-            }
-        } catch (HeadlessException e) {
-            JOptionPane.showMessageDialog(null, "error: " + e);
-        }
-    }//GEN-LAST:event_GuardarProvActionPerformed
-
-    private void ApellidoProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ApellidoProvKeyTyped
-//        char car = evt.getKeyChar();
-//        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
-//            && car != 'á' //Minúsculas
-//            && car != 'é'
-//            && car != 'í'
-//            && car != 'ó'
-//            && car != 'ú'
-//            && car != 'Á' //Mayúsculas
-//            && car != 'É'
-//            && car != 'Í'
-//            && car != 'Ó'
-//            && car != 'Ú'
-//            && car != 'Ü'
-//            && car != 'ü'
-//            && car != 'Ñ'
-//            && car != 'ñ'
-//            && (car != (char) KeyEvent.VK_SPACE)) {
-//            evt.consume();
-//        }
-    }//GEN-LAST:event_ApellidoProvKeyTyped
-
-    private void NEmpresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NEmpresaKeyTyped
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NEmpresaKeyTyped
-
-    private void NombreProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NombreProvKeyTyped
-//        char car = evt.getKeyChar();
-//        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
-//            && car != 'á' //Minúsculas
-//            && car != 'é'
-//            && car != 'í'
-//            && car != 'ó'
-//            && car != 'ú'
-//            && car != 'Á' //Mayúsculas
-//            && car != 'É'
-//            && car != 'Í'
-//            && car != 'Ó'
-//            && car != 'Ú'
-//            && car != 'Ü'
-//            && car != 'ü'
-//            && car != 'Ñ'
-//            && car != 'ñ'
-//            && (car != (char) KeyEvent.VK_SPACE)) {
-//            evt.consume();
-//        }
-    }//GEN-LAST:event_NombreProvKeyTyped
-
-    private void NombreProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreProvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NombreProvActionPerformed
-
     private void jTextTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextTelefonoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Proveedores.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Proveedores().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JTextField ApellidoProv;

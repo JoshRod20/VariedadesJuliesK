@@ -111,10 +111,7 @@ public class Lobby extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jdpane, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jdpane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +124,7 @@ public class Lobby extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jInternalFrame1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,8 +145,9 @@ public class Lobby extends javax.swing.JFrame {
     }//GEN-LAST:event_btInventarioActionPerformed
 
     private void btProveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProveActionPerformed
-        Proveedores prove = new Proveedores();
+        GestionarProveedores prove = new GestionarProveedores();
         prove.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_btProveActionPerformed
 
     private void btProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btProdActionPerformed
@@ -205,6 +203,6 @@ public class Lobby extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    javax.swing.JPanel jdpane;
+    private javax.swing.JPanel jdpane;
     // End of variables declaration//GEN-END:variables
 }

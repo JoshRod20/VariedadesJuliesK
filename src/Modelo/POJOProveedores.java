@@ -1,13 +1,24 @@
 package Modelo;
 
 public class POJOProveedores extends POJOPersona {
+
     
-    private String nombreEmpresa;
+    String nombreEmpresa;
 
     public POJOProveedores(String nombre, String apellido, String telefono) {
         super(nombre, apellido, telefono);
+    }
+    
+    
+    
+    public POJOProveedores(String nombreEmpresa, String nombre, String apellido, String telefono) {
+        super(nombre, apellido, telefono);
+        this.nombreEmpresa = nombreEmpresa;
         
     }
+    
+    
+            
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
