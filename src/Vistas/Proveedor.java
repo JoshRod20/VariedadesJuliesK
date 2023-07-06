@@ -4,6 +4,14 @@
  */
 package Vistas;
 
+import Controlador.CRUDProveedores;
+import Modelo.POJOProveedores;
+import static Vistas.Proveedores.ApellidoProv;
+import static Vistas.Proveedores.NEmpresa;
+import static Vistas.Proveedores.NombreProv;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rodri
@@ -16,7 +24,22 @@ public class Proveedor extends javax.swing.JInternalFrame {
     public Proveedor() {
         initComponents();
     }
+public void guardarProveedores() {
+        CRUDProveedores cp = new CRUDProveedores();
+        POJOProveedores prov1 = new POJOProveedores(NEmpresa.getText(),
+                NombreProv.getText(),
+                ApellidoProv.getText(),
+                NTelefono.getText());
+        cp.insertarProveedores(prov1);
 
+    }
+
+    public void limpiar() {
+        NombreProv.setText("");
+        ApellidoProv.setText("");
+        NEmpresa.setText("");
+        NTelefono.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +65,7 @@ public class Proveedor extends javax.swing.JInternalFrame {
         GuardarProv = new javax.swing.JButton();
         btActualizarProv = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextTelefono = new javax.swing.JFormattedTextField();
+        NTelefono = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(156, 162, 239));
@@ -134,17 +157,17 @@ public class Proveedor extends javax.swing.JInternalFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 255, 51));
         jSeparator1.setForeground(new java.awt.Color(7, 81, 74));
 
-        jTextTelefono.setBorder(null);
+        NTelefono.setBorder(null);
         try {
-            jTextTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
+            NTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTextTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextTelefono.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        jTextTelefono.addActionListener(new java.awt.event.ActionListener() {
+        NTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NTelefono.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        NTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextTelefonoActionPerformed(evt);
+                NTelefonoActionPerformed(evt);
             }
         });
 
@@ -175,7 +198,7 @@ public class Proveedor extends javax.swing.JInternalFrame {
                         .addGroup(jpanelProvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btActualizarProv)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -207,7 +230,7 @@ public class Proveedor extends javax.swing.JInternalFrame {
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpanelProvLayout.createSequentialGroup()
-                        .addComponent(jTextTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32)
@@ -367,9 +390,9 @@ public class Proveedor extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btActualizarProvActionPerformed
 
-    private void jTextTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTelefonoActionPerformed
+    private void NTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextTelefonoActionPerformed
+    }//GEN-LAST:event_NTelefonoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -377,6 +400,7 @@ public class Proveedor extends javax.swing.JInternalFrame {
     public static javax.swing.JButton GuardarProv;
     public static javax.swing.JTextField NEmpresa;
     private javax.swing.JLabel NProducto4;
+    private javax.swing.JFormattedTextField NTelefono;
     public static javax.swing.JTextField NombreProv;
     public static javax.swing.JButton btActualizarProv;
     private javax.swing.JLabel jLabel1;
@@ -390,7 +414,6 @@ public class Proveedor extends javax.swing.JInternalFrame {
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
-    private javax.swing.JFormattedTextField jTextTelefono;
     public static final javax.swing.JPanel jpanelProv = new javax.swing.JPanel();
     // End of variables declaration//GEN-END:variables
 }

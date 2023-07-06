@@ -56,7 +56,7 @@ public class Proveedores extends javax.swing.JFrame {
         GuardarProv = new javax.swing.JButton();
         btActualizarProv = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextTelefono = new javax.swing.JFormattedTextField();
+        NTelefono = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -151,17 +151,17 @@ public class Proveedores extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 255, 51));
         jSeparator1.setForeground(new java.awt.Color(7, 81, 74));
 
-        jTextTelefono.setBorder(null);
+        NTelefono.setBorder(null);
         try {
-            jTextTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
+            NTelefono.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jTextTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextTelefono.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
-        jTextTelefono.addActionListener(new java.awt.event.ActionListener() {
+        NTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NTelefono.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        NTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextTelefonoActionPerformed(evt);
+                NTelefonoActionPerformed(evt);
             }
         });
 
@@ -192,7 +192,7 @@ public class Proveedores extends javax.swing.JFrame {
                         .addGroup(jpanelProvLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btActualizarProv)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32))))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -224,7 +224,7 @@ public class Proveedores extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jpanelProvLayout.createSequentialGroup()
-                        .addComponent(jTextTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
@@ -385,9 +385,9 @@ public class Proveedores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NombreProvActionPerformed
 
-    private void jTextTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextTelefonoActionPerformed
+    private void NTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextTelefonoActionPerformed
+    }//GEN-LAST:event_NTelefonoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,6 +429,7 @@ public class Proveedores extends javax.swing.JFrame {
     public static javax.swing.JButton GuardarProv;
     public static javax.swing.JTextField NEmpresa;
     private javax.swing.JLabel NProducto4;
+    private javax.swing.JFormattedTextField NTelefono;
     public static javax.swing.JTextField NombreProv;
     public static javax.swing.JButton btActualizarProv;
     private javax.swing.JLabel jLabel1;
@@ -442,7 +443,6 @@ public class Proveedores extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator26;
     private javax.swing.JSeparator jSeparator27;
     private javax.swing.JSeparator jSeparator28;
-    private javax.swing.JFormattedTextField jTextTelefono;
     public static final javax.swing.JPanel jpanelProv = new javax.swing.JPanel();
     // End of variables declaration//GEN-END:variables
 }

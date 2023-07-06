@@ -34,7 +34,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jdpanej = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProducto = new javax.swing.JTable();
@@ -48,14 +48,14 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jPanel1.setBackground(new java.awt.Color(156, 162, 239));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jdpanej.setBackground(new java.awt.Color(156, 162, 239));
+        jdpanej.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Búsqueda de producto");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 64, 230, 41));
+        jdpanej.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 64, 230, 41));
 
         tableProducto.setBackground(new java.awt.Color(187, 227, 222));
         tableProducto.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -71,7 +71,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tableProducto);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
+        jdpanej.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
 
         btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +79,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 btnAñadirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
+        jdpanej.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
         btnEliminar.setToolTipText("");
@@ -88,7 +88,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
+        jdpanej.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -96,11 +96,11 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
+        jdpanej.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Variedades JuliesK");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 26));
+        jdpanej.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 26));
 
         btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lapiz.png"))); // NOI18N
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -108,14 +108,14 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 btEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
+        jdpanej.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
 
         botonmostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonmostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
+        jdpanej.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
 
         jTextSearch.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jTextSearch.setForeground(new java.awt.Color(153, 153, 153));
@@ -151,7 +151,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 jTextSearchKeyTyped(evt);
             }
         });
-        jPanel1.add(jTextSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
+        jdpanej.add(jTextSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,7 +161,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jdpanej, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -170,7 +170,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jdpanej, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -301,9 +301,9 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextSearch;
+    public static javax.swing.JPanel jdpanej;
     private javax.swing.JTable tableProducto;
     // End of variables declaration//GEN-END:variables
 }

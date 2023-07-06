@@ -22,7 +22,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPan = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         btnAñadir = new javax.swing.JButton();
@@ -33,14 +33,14 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         botonmostrar = new javax.swing.JButton();
         tsProv = new javax.swing.JTextField();
 
-        jPanel1.setBackground(new java.awt.Color(156, 162, 239));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPan.setBackground(new java.awt.Color(156, 162, 239));
+        jPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Búsqueda de Proveedores");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 64, -1, 41));
+        jPan.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 64, -1, 41));
 
         tableProv.setBackground(new java.awt.Color(187, 227, 222));
         tableProv.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -64,7 +64,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tableProv);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
+        jPan.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
 
         btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +72,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btnAñadirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
+        jPan.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
         btnEliminar.setToolTipText("");
@@ -81,7 +81,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
+        jPan.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
@@ -89,11 +89,11 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
+        jPan.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Variedades JuliesK");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 32, -1, 26));
+        jPan.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 32, -1, 26));
 
         btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lapiz.png"))); // NOI18N
         btEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,14 +101,14 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
+        jPan.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
 
         botonmostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonmostrarActionPerformed(evt);
             }
         });
-        jPanel1.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
+        jPan.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
 
         tsProv.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         tsProv.setForeground(new java.awt.Color(153, 153, 153));
@@ -144,19 +144,19 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 tsProvKeyTyped(evt);
             }
         });
-        jPanel1.add(tsProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
+        jPan.add(tsProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(jPan, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPan, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -283,7 +283,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPan;
     private javax.swing.JScrollPane jScrollPane1;
     public static final javax.swing.JTable tableProv = new javax.swing.JTable();
     private javax.swing.JTextField tsProv;

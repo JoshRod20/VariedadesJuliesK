@@ -1,74 +1,74 @@
 package Vistas;
 
-import Controlador.CRUDProducto;
-import Modelo.POJOCategoria;
-import Modelo.POJOProducto;
-import java.awt.HeadlessException;
-import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+//import Controlador.CRUDProducto;
+//import Modelo.POJOCategoria;
+//import Modelo.POJOProducto;
+//import java.awt.HeadlessException;
+//import java.awt.event.KeyEvent;
+//import javax.swing.JOptionPane;
+//import java.sql.ResultSet;
+//import java.util.ArrayList;
 
 public class Productos extends javax.swing.JFrame {
 
     /**
      * Creates new form AgregarProductos
      */
-    public Productos() {
-        initComponents();
-        llenarCategoria();
-        
-    }
-
-    public void llenarCategoria() {
-        CRUDProducto cate = new CRUDProducto();
-        ArrayList<POJOCategoria> listaCategoria = cate.mostrarDatosCombo();
-        comboCategoria.removeAllItems();
-        for (int i = 0; i < listaCategoria.size(); i++) {
-            comboCategoria.addItem(new POJOCategoria(
-                    listaCategoria.get(i).getIDCategoria(),
-                    listaCategoria.get(i).getNombre()));
-        }
-    }
-
-    public void guardarProducto() {
-        CRUDProducto cp = new CRUDProducto();
-        // Obtener el ID de la categoría seleccionada del JComboBox
-        POJOCategoria categoriaSeleccionada = (POJOCategoria) comboCategoria.getSelectedItem();
-        int ID_Categoria = categoriaSeleccionada.getIDCategoria();
-        
-        POJOProducto p1 = new POJOProducto(NombreProducto.getText(),
-                Integer.parseInt(pVenta.getText()),
-                Integer.parseInt(PCompra.getText()),
-                Descripcion.getText(),
-                Marca.getText(),
-                Talla.getText(),
-                Integer.parseInt(Cantidad.getText()),
-                ID_Categoria);
-        cp.insertarProductos(p1);
-
-    }
-
-    public boolean verificarDatos(String dato) {
-        ResultSet rs;
-        return verificarDatos(dato);
-    }
-
-    public void limpiar() {
-        NombreProducto.setText("");
-        Descripcion.setText("");
-        PCompra.setText("");
-        Marca.setText("");
-        Talla.setText("");
-        pVenta.setText("");
-
-    }
-
-    public void editarPro() {
-
-    }
-
-    @SuppressWarnings("unchecked")
+////    public Productos() {
+////        initComponents();
+////        llenarCategoria();
+////        
+////    }
+////
+////    public void llenarCategoria() {
+////        CRUDProducto cate = new CRUDProducto();
+////        ArrayList<POJOCategoria> listaCategoria = cate.mostrarDatosCombo();
+////        comboCategoria.removeAllItems();
+////        for (int i = 0; i < listaCategoria.size(); i++) {
+////            comboCategoria.addItem(new POJOCategoria(
+////                    listaCategoria.get(i).getIDCategoria(),
+////                    listaCategoria.get(i).getNombre()));
+////        }
+////    }
+////
+////    public void guardarProducto() {
+////        CRUDProducto cp = new CRUDProducto();
+////        // Obtener el ID de la categoría seleccionada del JComboBox
+////        POJOCategoria categoriaSeleccionada = (POJOCategoria) comboCategoria.getSelectedItem();
+////        int ID_Categoria = categoriaSeleccionada.getIDCategoria();
+////        
+////        POJOProducto p1 = new POJOProducto(NombreProducto.getText(),
+////                Integer.parseInt(pVenta.getText()),
+////                Integer.parseInt(PCompra.getText()),
+////                Descripcion.getText(),
+////                Marca.getText(),
+////                Talla.getText(),
+////                Integer.parseInt(Cantidad.getText()),
+////                ID_Categoria);
+////        cp.insertarProductos(p1);
+////
+////    }
+////
+////    public boolean verificarDatos(String dato) {
+////        ResultSet rs;
+////        return verificarDatos(dato);
+////    }
+////
+////    public void limpiar() {
+////        NombreProducto.setText("");
+////        Descripcion.setText("");
+////        PCompra.setText("");
+////        Marca.setText("");
+////        Talla.setText("");
+////        pVenta.setText("");
+////
+////    }
+////
+////    public void editarPro() {
+////
+////    }
+////
+////    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -428,25 +428,25 @@ public class Productos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NombreProductoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NombreProductoKeyTyped
-        char car = evt.getKeyChar();
-        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
-                && car != 'á' //Minúsculas
-                && car != 'é'
-                && car != 'í'
-                && car != 'ó'
-                && car != 'ú'
-                && car != 'Á' //Mayúsculas
-                && car != 'É'
-                && car != 'Í'
-                && car != 'Ó'
-                && car != 'Ú'
-                && car != 'Ü'
-                && car != 'ü'
-                && car != 'Ñ'
-                && car != 'ñ'
-                && (car != (char) KeyEvent.VK_SPACE)) {
-            evt.consume();
-        }
+//        char car = evt.getKeyChar();
+//        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
+//                && car != 'á' //Minúsculas
+//                && car != 'é'
+//                && car != 'í'
+//                && car != 'ó'
+//                && car != 'ú'
+//                && car != 'Á' //Mayúsculas
+//                && car != 'É'
+//                && car != 'Í'
+//                && car != 'Ó'
+//                && car != 'Ú'
+//                && car != 'Ü'
+//                && car != 'ü'
+//                && car != 'Ñ'
+//                && car != 'ñ'
+//                && (car != (char) KeyEvent.VK_SPACE)) {
+//            evt.consume();
+//        }
     }//GEN-LAST:event_NombreProductoKeyTyped
 
     private void DescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DescripcionKeyTyped
@@ -454,25 +454,25 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_DescripcionKeyTyped
 
     private void MarcaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MarcaKeyTyped
-        char car = evt.getKeyChar();
-        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
-                && car != 'á' //Minúsculas
-                && car != 'é'
-                && car != 'í'
-                && car != 'ó'
-                && car != 'ú'
-                && car != 'Á' //Mayúsculas
-                && car != 'É'
-                && car != 'Í'
-                && car != 'Ó'
-                && car != 'Ú'
-                && car != 'Ü'
-                && car != 'ü'
-                && car != 'Ñ'
-                && car != 'ñ'
-                && (car != (char) KeyEvent.VK_SPACE)) {
-            evt.consume();
-        }
+//        char car = evt.getKeyChar();
+//        if ((car < 'a' || car > 'z') && (car < 'A' || car > 'Z')
+//                && car != 'á' //Minúsculas
+//                && car != 'é'
+//                && car != 'í'
+//                && car != 'ó'
+//                && car != 'ú'
+//                && car != 'Á' //Mayúsculas
+//                && car != 'É'
+//                && car != 'Í'
+//                && car != 'Ó'
+//                && car != 'Ú'
+//                && car != 'Ü'
+//                && car != 'ü'
+//                && car != 'Ñ'
+//                && car != 'ñ'
+//                && (car != (char) KeyEvent.VK_SPACE)) {
+//            evt.consume();
+//        }
     }//GEN-LAST:event_MarcaKeyTyped
 
     private void TallaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TallaKeyTyped
@@ -574,26 +574,26 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_PCompraActionPerformed
 
     private void btActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btActualizarActionPerformed
-        try {
-            if ((NombreProducto.getText().equals("   -      -     "))
-                    || (Descripcion.getText().equals(""))
-                    || (Marca.getText().equals(""))
-                    || (Talla.getText().equals("    -    "))
-                    || (PCompra.getText().equals(""))
-                    || (pVenta.getText().equals(""))) {
-                JOptionPane.showMessageDialog(null, "Tiene datos vacíos");
-            } else {
-                editarPro();
-                JOptionPane.showMessageDialog(null, "Datos Actualizados Correctamente");
-                dispose();
-
-                GestionarProductos.botonmostrar.doClick();
-
-            }
-
-        } catch (HeadlessException e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e);
-        }
+//        try {
+//            if ((NombreProducto.getText().equals("   -      -     "))
+//                    || (Descripcion.getText().equals(""))
+//                    || (Marca.getText().equals(""))
+//                    || (Talla.getText().equals("    -    "))
+//                    || (PCompra.getText().equals(""))
+//                    || (pVenta.getText().equals(""))) {
+//                JOptionPane.showMessageDialog(null, "Tiene datos vacíos");
+//            } else {
+//                editarPro();
+//                JOptionPane.showMessageDialog(null, "Datos Actualizados Correctamente");
+//                dispose();
+//
+//                GestionarProductos.botonmostrar.doClick();
+//
+//            }
+//
+//        } catch (HeadlessException e) {
+//            JOptionPane.showMessageDialog(null, "Error: " + e);
+//        }
     }//GEN-LAST:event_btActualizarActionPerformed
 
     private void btACategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btACategoriaActionPerformed
