@@ -1,6 +1,8 @@
 package Vistas;
 
 import Controlador.CRUDProducto;
+import java.awt.Color;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,7 +24,16 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
-
+  }
+public void BuscarProductos() {
+        try {
+            DefaultTableModel modelo;
+            CRUDProducto pro = new CRUDProducto();
+            modelo = pro.BuscarDatos(jTextSearch.getText());
+            tableProducto.setModel(modelo);
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
   } 
 
     /**
@@ -35,80 +46,25 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jdpanej = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        botonmostrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jTextSearch = new javax.swing.JTextField();
+        jButtonEdit = new javax.swing.JButton();
+        jButtonElim = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableProducto = new javax.swing.JTable();
-        btnAñadir = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        btnBusqueda = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btEditar = new javax.swing.JButton();
-        botonmostrar = new javax.swing.JButton();
-        jTextSearch = new javax.swing.JTextField();
+        botonmostrar1 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setClosable(true);
 
         jdpanej.setBackground(new java.awt.Color(156, 162, 239));
         jdpanej.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Búsqueda de producto");
-        jdpanej.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 64, 230, 41));
-
-        tableProducto.setBackground(new java.awt.Color(187, 227, 222));
-        tableProducto.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        tableProducto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tableProducto.setRowHeight(30);
-        tableProducto.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        tableProducto.setShowGrid(true);
-        tableProducto.setShowVerticalLines(false);
-        tableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableProductoMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tableProducto);
-
-        jdpanej.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
-
-        btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
-        btnAñadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirActionPerformed(evt);
-            }
-        });
-        jdpanej.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
-
-        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
-        btnEliminar.setToolTipText("");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jdpanej.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
-
-        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
-        btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBusquedaActionPerformed(evt);
-            }
-        });
-        jdpanej.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Variedades JuliesK");
-        jdpanej.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, -1, 26));
-
-        btEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lapiz.png"))); // NOI18N
-        btEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEditarActionPerformed(evt);
-            }
-        });
-        jdpanej.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
+        jdpanej.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, 26));
 
         botonmostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,10 +73,15 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
         });
         jdpanej.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
 
+        jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(7, 81, 74));
+        jLabel2.setText("Gestión de Produtos");
+        jdpanej.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
         jTextSearch.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jTextSearch.setForeground(new java.awt.Color(153, 153, 153));
         jTextSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextSearch.setText("Buscar por ID, Nombres o Descripción");
+        jTextSearch.setText("Buscar por nombre, descripción o categoria");
         jTextSearch.setBorder(null);
         jTextSearch.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
@@ -151,7 +112,63 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
                 jTextSearchKeyTyped(evt);
             }
         });
-        jdpanej.add(jTextSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
+        jdpanej.add(jTextSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 570, 40));
+
+        jButtonEdit.setBackground(new java.awt.Color(0, 161, 154));
+        jButtonEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lapiz.png"))); // NOI18N
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
+        jdpanej.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 50, 40));
+
+        jButtonElim.setBackground(new java.awt.Color(0, 161, 154));
+        jButtonElim.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
+        jButtonElim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonElimActionPerformed(evt);
+            }
+        });
+        jdpanej.add(jButtonElim, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, 50, 40));
+
+        tableProducto.setBackground(new java.awt.Color(187, 227, 222));
+        tableProducto.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tableProducto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        tableProducto.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tableProducto.setRowHeight(30);
+        tableProducto.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        tableProducto.setShowGrid(true);
+        tableProducto.setShowVerticalLines(false);
+        tableProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableProductoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tableProducto);
+
+        jdpanej.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 760, 330));
+
+        botonmostrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonmostrar1ActionPerformed(evt);
+            }
+        });
+        jdpanej.add(botonmostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 90, 60));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/conjunto-accesoriosbb.png"))); // NOI18N
+        jLabel3.setText("jLabel1");
+        jdpanej.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 60, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,94 +194,13 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tableProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProductoMouseClicked
-//        datoSeleccionado = tableProducto.rowAtPoint(evt.getPoint());
-    }//GEN-LAST:event_tableProductoMouseClicked
-
-    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        //        AñadirProd apro = new AñadirProd();
-        //        apro.setVisible(true);
-
-        Producto produ = new Producto();
-        produ.setVisible(true);
-    }//GEN-LAST:event_btnAñadirActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-
-       if (datoSeleccionado >= 0){
-            String dato =
-                    String.valueOf(tableProducto.getValueAt(datoSeleccionado, 0));
-            CRUDProducto prod = new CRUDProducto();
-            if (JOptionPane.showConfirmDialog(rootPane,
-                    "Se eliminará el registro, ¿desea continuar?",
-                    "Eliminar registro",
-                    JOptionPane.WARNING_MESSAGE,
-                    JOptionPane.YES_NO_OPTION)
-                    ==JOptionPane.YES_OPTION) {
-                prod.eliminar(dato);
-                mostrar();
-                JOptionPane.showMessageDialog(null, "Dato eliminado correctamente");
-                
-            }else {
-                JOptionPane.showMessageDialog(null, "Debe seleccionar un registro de la tabla");
-            }
-        }
-
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-
-        try {
-            DefaultTableModel modelo;
-            CRUDProducto pro = new CRUDProducto();
-            modelo = pro.BuscarProducto(jTextSearch.getText());
-            if (jTextSearch.getText().equals("")) {
-                JOptionPane.showMessageDialog(null, "Escriba el dato a buscar");
-                mostrar();
-            } else {
-                tableProducto.setModel(modelo);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-    }//GEN-LAST:event_btnBusquedaActionPerformed
-
-    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
-//
-//                Productos Prod = new Productos();
-//                int x = (Lobby.jdpane.getWidth() / 2) - Prod.getWidth() / 2;
-//                int y = (Lobby.jdpane.getHeight() / 2) - Prod.getHeight() / 2;
-//                Prod.setLocation(x, y);
-//                Lobby.jdpane.add(POJOProductoProd);
-
-        if (datoSeleccionado >= 0){
-            //mandar datos al formulario
-
-            Productos.NombreProducto.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 0)));
-            Productos.Descripcion.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 1)));
-            Productos.PCompra.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 2)));
-            Productos.pVenta.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 3)));
-            Productos.Marca.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 4)));
-            Productos.Talla.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 5)));
-            Productos.NombreProducto.enable(false);
-            //hacer al frente y visible
-            Productos vista = new Productos();
-            vista.setVisible(true);
-            dispose();
-            Productos.GuardarProductos.setVisible(false);
-
-        }else{
-            JOptionPane.showMessageDialog(null, "Debe seleccionar un registro a actualizar");
-        }
-    }//GEN-LAST:event_btEditarActionPerformed
-
     private void botonmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonmostrarActionPerformed
 //        mostrar();
     }//GEN-LAST:event_botonmostrarActionPerformed
 
     private void jTextSearchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextSearchFocusLost
-        jTextSearch.setText("Buscar por cédula, nombres o apellidos");
-        //        jTextSearch.setForeground(Color.gray);
+        jTextSearch.setText("Buscar por nombre, descripción o categoria");
+        jTextSearch.setForeground(Color.gray);
     }//GEN-LAST:event_jTextSearchFocusLost
 
     private void jTextSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMouseClicked
@@ -273,7 +209,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
 
     private void jTextSearchMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMousePressed
         jTextSearch.setText("");
-        //        jTextSearch.setForeground(Color.black);
+        jTextSearch.setForeground(Color.black);
     }//GEN-LAST:event_jTextSearchMousePressed
 
     private void jTextSearchMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextSearchMouseReleased
@@ -285,22 +221,78 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTextSearchActionPerformed
 
     private void jTextSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSearchKeyReleased
-        //        buscar();
+        BuscarProductos();
     }//GEN-LAST:event_jTextSearchKeyReleased
 
     private void jTextSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextSearchKeyTyped
 
     }//GEN-LAST:event_jTextSearchKeyTyped
 
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+        Producto pro = new Producto();
+         int x = (MenuPrincipal.deskPane.getWidth() / 2) - pro.getWidth() / 2;
+        int y = (MenuPrincipal.deskPane.getHeight() / 2) - pro.getHeight() / 2;
+        pro.setLocation(x, y);
+        MenuPrincipal.deskPane.add(pro);
+
+        if (datoSeleccionado >= 0) {
+            //mandar datos al formulario
+            Producto.NombreProducto.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 0)));
+            Producto.Descripcion.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 1)));
+            Producto.PCompra.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 2)));
+            Producto.pVenta.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 3)));
+            Producto.Marca.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 4)));
+            Producto.Talla.enable(false);
+            //hacer al frente y visible
+            pro.toFront();
+            Producto.GuardarProductos.setVisible(false);
+            pro.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un registro a actualizar");
+        }
+    }//GEN-LAST:event_jButtonEditActionPerformed
+
+    private void jButtonElimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonElimActionPerformed
+        Producto pro = new Producto();
+        if (datoSeleccionado >= 0) {
+            String dato = String.valueOf(tableProducto.getValueAt(datoSeleccionado, 0));
+            CRUDProducto cli = new CRUDProducto();
+            if (JOptionPane.showConfirmDialog(rootPane,
+                    "Se eliminará el registro, ¿desea continuar?",
+                    "Eliminar Registro",
+                    JOptionPane.WARNING_MESSAGE,
+                    JOptionPane.YES_NO_OPTION)
+                    == JOptionPane.YES_OPTION) {
+                cli.eliminar(dato);
+                mostrar();
+                JOptionPane.showMessageDialog(null,
+                        "Dato eliminado correctamente");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Debe seleccionar un registro de la tabla");
+        }
+
+
+    }//GEN-LAST:event_jButtonElimActionPerformed
+
+    private void tableProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProductoMouseClicked
+        datoSeleccionado = tableProducto.rowAtPoint(evt.getPoint());
+    }//GEN-LAST:event_tableProductoMouseClicked
+
+    private void botonmostrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonmostrar1ActionPerformed
+        mostrar();
+    }//GEN-LAST:event_botonmostrar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton botonmostrar;
-    private javax.swing.JButton btEditar;
-    private javax.swing.JButton btnAñadir;
-    private javax.swing.JButton btnBusqueda;
-    private javax.swing.JButton btnEliminar;
+    public static javax.swing.JButton botonmostrar1;
+    private javax.swing.JButton jButtonEdit;
+    private javax.swing.JButton jButtonElim;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextSearch;
     public static javax.swing.JPanel jdpanej;

@@ -3,7 +3,7 @@ package Controlador;
 import Conexion.Controlador;
 import Modelo.POJOCategoria;
 import Modelo.POJOProducto;
-import Vistas.Productos;
+import Vistas.Producto;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,7 +18,7 @@ public class CRUDProducto {
     private final Controlador con = new Controlador();
     private final Connection cn = (Connection) con.conectar();
 
-    public DefaultTableModel BuscarProducto(String dato) {
+    public DefaultTableModel BuscarDatos(String dato) {
         ResultSet rs;
         DefaultTableModel modelo;
 
@@ -29,7 +29,7 @@ public class CRUDProducto {
 
         try {
             CallableStatement call = cn.prepareCall(
-                    "{call BuscarProducto( ?)}");
+                    "{call ConsultarProducto( ?)}");
             call.setString(1, dato);
             rs = call.executeQuery();
 
@@ -184,5 +184,50 @@ public void insertarProductos(POJOProducto PJ){
         }
         return Categorias;
     }
+    public DefaultTableModel BuscarProductos() {
+        ResultSet rs;
+        DefaultTableModel modelo;
+        String[] titulos = {"idProducto", "Nombre Producto", "precioVenta", "descripcion", "categoria", "cantidad"};
+        String[] registro = new String[5];
+        modelo = new DefaultTableModel(null, titulos);
 
+        try {
+            CallableStatement cbstc = cn.prepareCall("{call ConsultarProductos}");
+            rs = cbstc.executeQuery();
+
+            while (rs.next()) {
+                registro[0] = rs.getString("idProducto");
+                registro[1] = rs.getString("NombreProducto");
+                registro[2] = rs.getString("precioVenta");
+                registro[3] = rs.getString("descripcion");
+                registro[4] = rs.getString("categoria");
+                registro[5] = rs.getString("cantidad");
+
+                modelo.addRow(registro);
+            }
+            return modelo;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
 }
+//        public String buscarDatosProducto(String dato) {
+//        ResultSet rs;
+//        String respuesta="";
+//
+//        try {
+//            CallableStatement call = cn.prepareCall("{call ConsultarProductos(?)}");
+//            call.setString(1, dato);
+//            rs = call.executeQuery();
+//            while (rs.next()) {
+//                respuesta = rs.getString("nombres")+" "+rs.getString("descripcion");
+//            }
+//            return respuesta;
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, e);
+//            return null;
+//        }
+//        }
+
+//}

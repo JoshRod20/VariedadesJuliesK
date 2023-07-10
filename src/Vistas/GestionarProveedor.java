@@ -33,6 +33,8 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         botonmostrar = new javax.swing.JButton();
         tsProv = new javax.swing.JTextField();
 
+        setClosable(true);
+
         jPan.setBackground(new java.awt.Color(156, 162, 239));
         jPan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -167,7 +169,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tableProvMouseClicked
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        Proveedores prove = new Proveedores();
+        Proveedor prove = new Proveedor();
         prove.setVisible(true);
         // dispose();
     }//GEN-LAST:event_btnAñadirActionPerformed
