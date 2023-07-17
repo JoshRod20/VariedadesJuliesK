@@ -16,31 +16,27 @@ public class CRUDProveedores {
      private final Controlador con = new Controlador();
     private final Connection cn = (Connection) con.conectar();
     
-        public DefaultTableModel BuscarProveedor(String dato) {
+        public DefaultTableModel BuscarDatos(String dato) {
         ResultSet rs;
         DefaultTableModel modelo;
 
-        String[] titulos = {"nombre", "apellido", "nombreEmpresa", "telefono"};
+        String[] titulos = {"idProveedor", "nombre", "apellido", "nombreEmpresa", "telefono"};
         String[] registro = new String[4];
 
         modelo = new DefaultTableModel(null, titulos);
 
         try {
             CallableStatement call = cn.prepareCall(
-                    "{call BuscarProducto( ?)}");
+                    "{call BuscarProveedorPorNombre( ?)}");
             call.setString(1, dato);
             rs = call.executeQuery();
 
             while (rs.next()) {
-                registro[0] = rs.getString("nombre");
-                registro[1] = rs.getString("apellido");
-                registro[2] = rs.getString("nombreEmpresa");
-                registro[3] = rs.getString("telefono");
-//                registro[4] = rs.getString("descripcion");
-//                registro[5] = rs.getString("marca");
-//                registro[6] = rs.getString("talla");
-//                registro[7] = rs.getString("cantidad");
-//                registro[8] = rs.getInt("idCategoria");
+                registro[0] = rs.getString("idProveedor");
+                registro[1] = rs.getString("nombre");
+                registro[2] = rs.getString("apellido");
+                registro[3] = rs.getString("nombreEmpresa");
+                registro[4] = rs.getString("telefono");
 
                 modelo.addRow(registro);
 
@@ -100,21 +96,22 @@ public class CRUDProveedores {
 }
     
     
-//     public void Guardar(POJOProveedores prov1) {
-//        try {
-//            CallableStatement cbst = cn.prepareCall("{call InsertarProveedor(?,?,?,?)}");
-//            cbst.setString(1, prov1.getNombre());
-//            cbst.setString(2, prov1.getApellido());
-//            cbst.setString(3, prov1.getNombreEmpresa());
-//            cbst.setString(4, prov1.getTelefono());
-//
-//            cbst.executeUpdate();
-//
-//        } catch (SQLException e) {
-////            JOptionPane.showMessageDialog(null, e);
-////        }
-//        
-//}
+     public void Guardar(POJOProveedores prov1) {
+        try {
+            CallableStatement cbst = cn.prepareCall("{call InsertarProveedor(?,?,?,?)}");
+            cbst.setString(1, prov1.getNombre());
+            cbst.setString(2, prov1.getApellido());
+            cbst.setString(3, prov1.getNombreEmpresa());
+            cbst.setString(4, prov1.getTelefono());
+
+            cbst.executeUpdate();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+     }
+        
+
         
         public boolean verificarDatos(String dato) {
         ResultSet rs;
@@ -153,6 +150,33 @@ public class CRUDProveedores {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
 
+        }
+    }
+     
+     public DefaultTableModel BuscarProveedores() {
+        ResultSet rs;
+        DefaultTableModel modelo;
+        String[] titulos = {"idProveedor", "nombre", "apellido", "nombreEmpresa", "telefono"};
+        String[] registro = new String[5];
+        modelo = new DefaultTableModel(null, titulos);
+
+        try {
+            CallableStatement cbstc = cn.prepareCall("{call ConsultarProductos}");
+            rs = cbstc.executeQuery();
+
+            while (rs.next()) {
+                registro[0] = rs.getString("idProveedor");
+                registro[1] = rs.getString("nombre");
+                registro[2] = rs.getString("apellido");
+                registro[3] = rs.getString("nombreEmpresa");
+                registro[4] = rs.getString("telefono");
+
+                modelo.addRow(registro);
+            }
+            return modelo;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
         }
     }
 }

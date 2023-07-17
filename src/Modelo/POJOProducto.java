@@ -11,7 +11,29 @@ public class POJOProducto {
     String Tallas;
     int CantidadDisponible;
     int IdCategoria;
+    String NombreCategoria;
 
+    public POJOProducto(String NombreProducto, int PrecioVenta, int PrecioCompra, String Descripcion, String Marcas, String Tallas, int CantidadDisponible, int IdCategoria, String NombreCategoria) {
+        this.NombreProducto = NombreProducto;
+        this.PrecioVenta = PrecioVenta;
+        this.PrecioCompra = PrecioCompra;
+        this.Descripcion = Descripcion;
+        this.Marcas = Marcas;
+        this.Tallas = Tallas;
+        this.CantidadDisponible = CantidadDisponible;
+        this.IdCategoria = IdCategoria;
+        this.NombreCategoria = NombreCategoria;
+    }
+
+    public String getNombreCategoria() {
+        return NombreCategoria;
+    }
+
+    public void setNombreCategoria(String NombreCategoria) {
+        this.NombreCategoria = NombreCategoria;
+    }
+
+    
     public POJOProducto(String NombreProducto, int PrecioVenta, int PrecioCompra, String Descripcion, String Marcas, String Tallas, int CantidadDisponible, int IdCategoria) {
         this.NombreProducto = NombreProducto;
         this.PrecioVenta = PrecioVenta;
@@ -35,6 +57,17 @@ public class POJOProducto {
         this.IdCategoria = IdCategoria;
     }
 
+    public POJOProducto(String NombreProducto, int PrecioVenta, int PrecioCompra, String Descripcion, String Marcas, String Tallas, int CantidadDisponible) {
+        this.NombreProducto = NombreProducto;
+        this.PrecioVenta = PrecioVenta;
+        this.PrecioCompra = PrecioCompra;
+        this.Descripcion = Descripcion;
+        this.Marcas = Marcas;
+        this.Tallas = Tallas;
+        this.CantidadDisponible = CantidadDisponible;
+    }
+
+    
     public int getIDProducto() {
         return IDProducto;
     }

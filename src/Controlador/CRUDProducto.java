@@ -3,7 +3,7 @@ package Controlador;
 import Conexion.Controlador;
 import Modelo.POJOCategoria;
 import Modelo.POJOProducto;
-import Vistas.Producto;
+import Vistas.Proveedor;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,28 +22,27 @@ public class CRUDProducto {
         ResultSet rs;
         DefaultTableModel modelo;
 
-        String[] titulos = {"idProducto", "nombreProducto", "descripcion", "precioVenta", "categoria", "cantidad"};
+        String[] titulos = {"idProducto", "nombreProducto", "precioCompra", "precioVenta", "descripcion", "marca", "talla", "ctegoria"};
         String[] registro = new String[8];
 
         modelo = new DefaultTableModel(null, titulos);
 
         try {
             CallableStatement call = cn.prepareCall(
-                    "{call ConsultarProducto( ?)}");
+                    "{call buscarProductos(?)}");
             call.setString(1, dato);
             rs = call.executeQuery();
 
             while (rs.next()) {
-//                registro[0] = rs.getString("idProducto");
-//                registro[1] = rs.getString("nombreProducto");
-//                registro[2] = rs.getString("precioCompra");
-//                registro[3] = rs.getString("precioVenta");
-//                registro[4] = rs.getString("descripcion");
-//                registro[5] = rs.getString("marca");
-//                registro[6] = rs.getString("talla");
-//                registro[7] = rs.getString("cantidad");
-//                registro[8] = rs.getInt("idCategoria");
-
+                registro[0] = rs.getString("idProducto");
+                registro[1] = rs.getString("nombreProducto");
+                registro[2] = rs.getString("precioCompra");
+                registro[3] = rs.getString("precioVenta");
+                registro[4] = rs.getString("descripcion");
+                registro[5] = rs.getString("marca");
+                registro[6] = rs.getString("talla");
+                registro[7] = rs.getString("Categoria");
+               
                 modelo.addRow(registro);
 
             }
@@ -53,12 +52,11 @@ public class CRUDProducto {
             return null;
         }
     }
-
     public DefaultTableModel MostrarProductos() {
         ResultSet rs;
         DefaultTableModel modelo;
-        String[] titulos = {"idProducto", "Nombre Producto", "precioVenta", "descripcion", "categoria", "cantidad"};
-        String[] registro = new String[5];
+        String[] titulos = {"idProducto", "nombreProducto", "precioCompra", "precioVenta", "descripcion", "marca", "talla", "categoria"};
+        String[] registro = new String[8];
         modelo = new DefaultTableModel(null, titulos);
 
         try {
@@ -67,11 +65,13 @@ public class CRUDProducto {
 
             while (rs.next()) {
                 registro[0] = rs.getString("idProducto");
-                registro[1] = rs.getString("NombreProducto");
-                registro[2] = rs.getString("precioVenta");
-                registro[3] = rs.getString("descripcion");
-                registro[4] = rs.getString("categoria");
-                registro[5] = rs.getString("cantidad");
+                registro[1] = rs.getString("nombreProducto");
+                registro[2] = rs.getString("precioCompra");
+                registro[3] = rs.getString("precioVenta");
+                registro[4] = rs.getString("descripcion");
+                registro[5] = rs.getString("marca");
+                registro[6] = rs.getString("talla");
+                registro[7] = rs.getString("categoria");
 
                 modelo.addRow(registro);
             }
@@ -86,13 +86,14 @@ public void insertarProductos(POJOProducto PJ){
     try {
         CallableStatement cs = cn.prepareCall("{call InsertarProductos(?,?,?,?,?,?,?,?)}");
         cs.setString(1, PJ.getNombreProducto());
-        cs.setString(4, PJ.getDescripcion());
         cs.setInt(2, PJ.getPrecioCompra());
         cs.setInt(3, PJ.getPrecioVenta());
+        cs.setString(4, PJ.getDescripcion());
         cs.setString(5, PJ.getMarcas());
         cs.setString(6, PJ.getTallas());
         cs.setInt(7, PJ.getCantidadDisponible());
-        cs.setInt(8, PJ.getIdCategoria());
+        cs.setInt(8,PJ.getIdCategoria());
+        
         
         cs.executeUpdate();
         
@@ -103,14 +104,15 @@ public void insertarProductos(POJOProducto PJ){
 }
     public void Guardar(POJOProducto pro1) {
         try {
-            CallableStatement cbst = cn.prepareCall("{call InsertarProductos(?,?,?,?,?,?,?)}");
+            CallableStatement cbst = cn.prepareCall("{call InsertarProductos(?,?,?,?,?,?,?,?)}");
             cbst.setString(1, pro1.getNombreProducto());
-            cbst.setString(2, pro1.getDescripcion());
-            cbst.setDouble(3, pro1.getPrecioCompra());
-            cbst.setDouble(4, pro1.getPrecioVenta());
+            cbst.setString(4, pro1.getDescripcion());
+            cbst.setDouble(2, pro1.getPrecioCompra());
+            cbst.setDouble(3, pro1.getPrecioVenta());
             cbst.setString(5, pro1.getMarcas());
             cbst.setString(6, pro1.getTallas());
-            cbst.setInt(7, pro1.getIdCategoria());
+            cbst.setInt(7, pro1.getCantidadDisponible());
+            cbst.setInt(8, pro1.getIdCategoria());  
             cbst.executeUpdate();
 
         } catch (SQLException e) {
@@ -134,10 +136,10 @@ public void insertarProductos(POJOProducto PJ){
         }
     }
 
-    public void eliminar(String Producto) {
+    public void eliminar(String Proveedor) {
         try {
-            CallableStatement cbst = cn.prepareCall("{call EliminarProductoPorID(?)}");
-            cbst.setString(1, Producto);
+            CallableStatement cbst = cn.prepareCall("{call EliminarProveedorPorID(?)}");
+            cbst.setString(1, Proveedor);
             cbst.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e);
@@ -146,13 +148,14 @@ public void insertarProductos(POJOProducto PJ){
 
     public void actualizar(POJOProducto p1) {
         try {
-            CallableStatement cbst = cn.prepareCall("{call ActualizarProductos(?,?,?,?,?)}");
+            CallableStatement cbst = cn.prepareCall("{call ActualizarProductos(?,?,?,?,?,?)}");
             cbst.setString(1, p1.getNombreProducto());
             cbst.setString(2, p1.getDescripcion());
             cbst.setDouble(3, p1.getPrecioCompra());
             cbst.setDouble(4, p1.getPrecioVenta());
             cbst.setString(5, p1.getMarcas());
             cbst.setString(6, p1.getTallas());
+            cbst.setInt(8, p1.getIdCategoria());
             cbst.executeUpdate();
 
         } catch (SQLException e) {
@@ -184,11 +187,13 @@ public void insertarProductos(POJOProducto PJ){
         }
         return Categorias;
     }
+    
+    
     public DefaultTableModel BuscarProductos() {
         ResultSet rs;
         DefaultTableModel modelo;
-        String[] titulos = {"idProducto", "Nombre Producto", "precioVenta", "descripcion", "categoria", "cantidad"};
-        String[] registro = new String[5];
+        String[] titulos = {"idProducto", "Nombre Producto", "precioCompra", "precioVenta", "descripcion", "categoria", "cantidad", "categoria"};
+        String[] registro = new String[7];
         modelo = new DefaultTableModel(null, titulos);
 
         try {
@@ -198,10 +203,11 @@ public void insertarProductos(POJOProducto PJ){
             while (rs.next()) {
                 registro[0] = rs.getString("idProducto");
                 registro[1] = rs.getString("NombreProducto");
-                registro[2] = rs.getString("precioVenta");
-                registro[3] = rs.getString("descripcion");
-                registro[4] = rs.getString("categoria");
-                registro[5] = rs.getString("cantidad");
+                registro[2] = rs.getString("precioCompra");
+                registro[3] = rs.getString("precioVenta");
+                registro[4] = rs.getString("descripcion");
+                registro[5] = rs.getString("categoria");
+                registro[6] = rs.getString("cantidad");
 
                 modelo.addRow(registro);
             }

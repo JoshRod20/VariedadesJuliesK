@@ -1,18 +1,48 @@
 package Vistas;
 
+import Controlador.CRUDProveedores;
+import Modelo.POJOProveedores;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rodri
  */
 public class GestionarProveedor extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form GestionarProveedor
-     */
+        int datoSeleccionado2 = -1;
+        
     public GestionarProveedor() {
         initComponents();
+        botonmostrar.setVisible(false);
     }
+    
+    
+     public void mostrar(){//Método mostrar 
+        try {
+            DefaultTableModel modelo;
+                CRUDProveedores prod = new CRUDProveedores();//objeto de la clase CRUDProveedores
+                modelo = prod.MostrarProveedores();
+                TableProve.setModel(modelo);
+                
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+     }
+        public void BuscarProveedores() {
+        try {
+            DefaultTableModel modelo;
+            CRUDProveedores pro = new CRUDProveedores();
+            modelo = pro.BuscarDatos(BuscarProv.getText());
+            TableProve.setModel(modelo);
+        } catch (HeadlessException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
 
+     }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -24,14 +54,14 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
 
         jPan = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        btnAñadir = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        btnBusqueda = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btEditar = new javax.swing.JButton();
         botonmostrar = new javax.swing.JButton();
-        tsProv = new javax.swing.JTextField();
+        BuscarProv = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        TableProve = new javax.swing.JTable();
+        botonmostrar1 = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -41,40 +71,8 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Roboto Black", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Búsqueda de Proveedores");
+        jLabel2.setText("Gestión de Proveedores");
         jPan.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 64, -1, 41));
-
-        tableProv.setBackground(new java.awt.Color(187, 227, 222));
-        tableProv.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        tableProv.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        tableProv.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        tableProv.setRowHeight(30);
-        tableProv.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        tableProv.setShowGrid(true);
-        tableProv.setShowVerticalLines(false);
-        tableProv.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableProvMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tableProv);
-
-        jPan.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 198, 724, 295));
-
-        btnAñadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/agregar.png"))); // NOI18N
-        btnAñadir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAñadirActionPerformed(evt);
-            }
-        });
-        jPan.add(btnAñadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(642, 140, 40, 40));
 
         btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Imagenes/basura.png"))); // NOI18N
         btnEliminar.setToolTipText("");
@@ -83,15 +81,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btnEliminarActionPerformed(evt);
             }
         });
-        jPan.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(736, 140, 40, 40));
-
-        btnBusqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/busqueda.png"))); // NOI18N
-        btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBusquedaActionPerformed(evt);
-            }
-        });
-        jPan.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(596, 140, 40, 40));
+        jPan.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 40, 40));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Variedades JuliesK");
@@ -103,7 +93,7 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
                 btEditarActionPerformed(evt);
             }
         });
-        jPan.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, 40, 40));
+        jPan.add(btEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 140, 40, 40));
 
         botonmostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,47 +102,74 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         });
         jPan.add(botonmostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 54, 0, 30));
 
-        tsProv.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        tsProv.setForeground(new java.awt.Color(153, 153, 153));
-        tsProv.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tsProv.setText("Buscar por ID, Nombres o Apellidos");
-        tsProv.setBorder(null);
-        tsProv.addFocusListener(new java.awt.event.FocusAdapter() {
+        BuscarProv.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        BuscarProv.setForeground(new java.awt.Color(153, 153, 153));
+        BuscarProv.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        BuscarProv.setText("Buscar por ID, Nombres o Apellidos");
+        BuscarProv.setBorder(null);
+        BuscarProv.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
-                tsProvFocusLost(evt);
+                BuscarProvFocusLost(evt);
             }
         });
-        tsProv.addMouseListener(new java.awt.event.MouseAdapter() {
+        BuscarProv.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tsProvMouseClicked(evt);
+                BuscarProvMouseClicked(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                tsProvMousePressed(evt);
+                BuscarProvMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tsProvMouseReleased(evt);
+                BuscarProvMouseReleased(evt);
             }
         });
-        tsProv.addActionListener(new java.awt.event.ActionListener() {
+        BuscarProv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tsProvActionPerformed(evt);
+                BuscarProvActionPerformed(evt);
             }
         });
-        tsProv.addKeyListener(new java.awt.event.KeyAdapter() {
+        BuscarProv.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tsProvKeyReleased(evt);
+                BuscarProvKeyReleased(evt);
             }
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tsProvKeyTyped(evt);
+                BuscarProvKeyTyped(evt);
             }
         });
-        jPan.add(tsProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 140, 538, 40));
+        jPan.add(BuscarProv, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 538, 40));
+
+        TableProve.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "idProveedor", "Nombre", "Apellido", "NombreEmpresa", "Telefono"
+            }
+        ));
+        TableProve.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableProveMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(TableProve);
+
+        jPan.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(56, 200, 720, 300));
+
+        botonmostrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonmostrar1ActionPerformed(evt);
+            }
+        });
+        jPan.add(botonmostrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 30, 90, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPan, javax.swing.GroupLayout.DEFAULT_SIZE, 830, Short.MAX_VALUE)
+            .addComponent(jPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,130 +181,111 @@ public class GestionarProveedor extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tableProvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableProvMouseClicked
-        //        datoSeleccionado = tableProv.rowAtPoint(evt.getPoint());
-    }//GEN-LAST:event_tableProvMouseClicked
-
-    private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        Proveedor prove = new Proveedor();
-        prove.setVisible(true);
-        // dispose();
-    }//GEN-LAST:event_btnAñadirActionPerformed
-
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-
-        //        if (datoSeleccionado >= 0){
-            //            String dato =
-            //            String.valueOf(tableProv.getValueAt(datoSeleccionado, 0));
-            //            CRUDProducto prod = new CRUDProducto();
-            //            if (JOptionPane.showConfirmDialog(rootPane,
-                //                "Se eliminará el registro, ¿desea continuar?",
-                //                "Eliminar registro",
-                //                JOptionPane.WARNING_MESSAGE,
-                //                JOptionPane.YES_NO_OPTION)
-            //            ==JOptionPane.YES_OPTION) {
-            //            prod.eliminar(dato);
-            //            mostrar();
-            //            JOptionPane.showMessageDialog(null, "Dato eliminado correctamente");
-            //
-            //        }else {
-            //            JOptionPane.showMessageDialog(null, "Debe seleccionar un registro de la tabla");
-            //        }
-        //        }
+        Proveedor prov = new Proveedor();
+        if (datoSeleccionado2 >= 0) {
+            String dato = String.valueOf(TableProve.getValueAt(datoSeleccionado2, 0));
+            CRUDProveedores prove = new CRUDProveedores();
+            if (JOptionPane.showConfirmDialog(rootPane,
+                    "Se eliminará el registro, ¿desea continuar?",
+                    "Eliminar Registro",
+                    JOptionPane.WARNING_MESSAGE,
+                    JOptionPane.YES_NO_OPTION)
+                    == JOptionPane.YES_OPTION) {
+                prove.eliminar(dato);
+                mostrar();
+                JOptionPane.showMessageDialog(null,
+                        "Dato eliminado correctamente");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Debe seleccionar un registro de la tabla");
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-
-        //        try {
-            //            DefaultTableModel modelo;
-            //            CRUDProveedores pro = new CRUDProveedores();
-            //            modelo = pro.BuscarProducto(tsProv.getText());
-            //            if (tsProv.getText().equals("")) {
-                //                JOptionPane.showMessageDialog(null, "Escriba el dato a buscar");
-                //                mostrar();
-                //            } else {
-                //                tableProv.setModel(modelo);
-                //            }
-            //        } catch (Exception e) {
-            //            JOptionPane.showMessageDialog(null, e);
-            //        }
-    }//GEN-LAST:event_btnBusquedaActionPerformed
 
     private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
 
-        //        Productos Prod = new Productos();
-        //        int x = (Lobby.jdpane.getWidth() / 2) - Prod.getWidth() / 2;
-        //        int y = (Lobby.jdpane.getHeight() / 2) - Prod.getHeight() / 2;
-        //        Prod.setLocation(x, y);
-        //        Lobby.jdpane.add(POJOProductoProd);
+                Proveedor Prov = new Proveedor();
+                int x = (MenuPrincipal.deskPane.getWidth() / 2) - Prov.getWidth() / 2;
+                int y = (MenuPrincipal.deskPane.getHeight() / 2) - Prov.getHeight() / 2;
+                Prov.setLocation(x, y);
+                MenuPrincipal.deskPane.add(Prov);
 
-        //        if (datoSeleccionado >= 0){
-            //            //mandar datos al formulario
-            //
-            //            Productos.NombreProducto.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 0)));
-            //            Productos.Descripcion.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 1)));
-            //            Productos.PCompra.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 2)));
-            //            Productos.pVenta.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 3)));
-            //            Productos.Marca.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 4)));
-            //            Productos.Talla.setText(String.valueOf(tableProv.getValueAt(datoSeleccionado, 5)));
-            //            Productos.NombreProducto.enable(false);
-            //            //hacer al frente y visible
-            //            Productos vista = new Productos();
-            //            vista.setVisible(true);
-            //            dispose();
-            //            Productos.GuardarProductos.setVisible(false);
-            //
-            //        }else{
-            //            JOptionPane.showMessageDialog(null, "Debe seleccionar un registro a actualizar");
-            //        }
+                if (datoSeleccionado2 >= 1){
+                        //mandar datos al formulario
+            
+                        Proveedor.NombreProv.setText(String.valueOf(TableProve.getValueAt(datoSeleccionado2, 1)));
+                        Proveedor.ApellidoProv.setText(String.valueOf(TableProve.getValueAt(datoSeleccionado2, 2)));
+                        Proveedor.NEmpresa.setText(String.valueOf(TableProve.getValueAt(datoSeleccionado2, 3)));
+                        Proveedor.NTelefono.setText(String.valueOf(TableProve.getValueAt(datoSeleccionado2, 4)));
+                        Proveedor.NombreProv.enable(false);
+                        //hacer al frente y visible
+                        Proveedor vista = new Proveedor();
+                        vista.setVisible(true);
+                        
+                        prov.toFront();
+                        Proveedor.GuardarProv.setVisible(true);
+            prov.setVisible(true);
+                        
+            
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Debe seleccionar un registro a actualizar");
+                    }
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void botonmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonmostrarActionPerformed
-        //        mostrar();
+                mostrar();
     }//GEN-LAST:event_botonmostrarActionPerformed
 
-    private void tsProvFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tsProvFocusLost
+    private void BuscarProvFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_BuscarProvFocusLost
         //        tsProv.setText("Buscar por cédula, nombres o apellidos");
         //        tsProv.setForeground(Color.gray);
-    }//GEN-LAST:event_tsProvFocusLost
+    }//GEN-LAST:event_BuscarProvFocusLost
 
-    private void tsProvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tsProvMouseClicked
-        tsProv.setText("");
-    }//GEN-LAST:event_tsProvMouseClicked
+    private void BuscarProvMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarProvMouseClicked
+        BuscarProv.setText("");
+    }//GEN-LAST:event_BuscarProvMouseClicked
 
-    private void tsProvMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tsProvMousePressed
+    private void BuscarProvMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarProvMousePressed
         //        tsProv.setText("");
         //        tsProv.setForeground(Color.black);
-    }//GEN-LAST:event_tsProvMousePressed
+    }//GEN-LAST:event_BuscarProvMousePressed
 
-    private void tsProvMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tsProvMouseReleased
+    private void BuscarProvMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BuscarProvMouseReleased
 
-    }//GEN-LAST:event_tsProvMouseReleased
+    }//GEN-LAST:event_BuscarProvMouseReleased
 
-    private void tsProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tsProvActionPerformed
+    private void BuscarProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarProvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tsProvActionPerformed
+    }//GEN-LAST:event_BuscarProvActionPerformed
 
-    private void tsProvKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tsProvKeyReleased
-        //        buscar();
-    }//GEN-LAST:event_tsProvKeyReleased
+    private void BuscarProvKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarProvKeyReleased
+        BuscarProveedores();
+    }//GEN-LAST:event_BuscarProvKeyReleased
 
-    private void tsProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tsProvKeyTyped
+    private void BuscarProvKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BuscarProvKeyTyped
 
-    }//GEN-LAST:event_tsProvKeyTyped
+    }//GEN-LAST:event_BuscarProvKeyTyped
+
+    private void TableProveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableProveMouseClicked
+         datoSeleccionado2 = TableProve.rowAtPoint(evt.getPoint());
+    }//GEN-LAST:event_TableProveMouseClicked
+
+    private void botonmostrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonmostrar1ActionPerformed
+        mostrar();
+    }//GEN-LAST:event_botonmostrar1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BuscarProv;
+    private javax.swing.JTable TableProve;
     public static javax.swing.JButton botonmostrar;
+    public static javax.swing.JButton botonmostrar1;
     private javax.swing.JButton btEditar;
-    private javax.swing.JButton btnAñadir;
-    private javax.swing.JButton btnBusqueda;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPan;
-    private javax.swing.JScrollPane jScrollPane1;
-    public static final javax.swing.JTable tableProv = new javax.swing.JTable();
-    private javax.swing.JTextField tsProv;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

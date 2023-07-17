@@ -1,3 +1,4 @@
+
 package Vistas;
 
 public class MenuPrincipal extends javax.swing.JFrame {
@@ -111,12 +112,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductoActionPerformed
-          Producto cliente = new Producto();
-        int x = (deskPane.getWidth() / 2) - cliente.getWidth() / 2;
-        int y = ((deskPane.getHeight() / 2) - cliente.getHeight() / 2) - 10;
-        cliente.setLocation(x, y);
-        deskPane.add(cliente);
-        cliente.show();
+          Producto pro = new Producto();
+        int x = (deskPane.getWidth() / 2) - pro.getWidth() / 2;
+        int y = ((deskPane.getHeight() / 2) - pro.getHeight() / 2) - 10;
+        pro.setLocation(x, y);
+        deskPane.add(pro);
+        pro.show();
     }//GEN-LAST:event_ProductoActionPerformed
 
     private void ProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProveedorActionPerformed

@@ -377,7 +377,7 @@ public class Proveedor extends javax.swing.JInternalFrame {
     public static javax.swing.JButton GuardarProv;
     public static javax.swing.JTextField NEmpresa;
     private javax.swing.JLabel NProducto4;
-    private javax.swing.JFormattedTextField NTelefono;
+    public static javax.swing.JFormattedTextField NTelefono;
     public static javax.swing.JTextField NombreProv;
     public static javax.swing.JButton btActualizarProv;
     private javax.swing.JLabel jLabel1;

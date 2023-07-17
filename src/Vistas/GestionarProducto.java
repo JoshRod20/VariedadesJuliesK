@@ -12,6 +12,7 @@ public class GestionarProducto extends javax.swing.JInternalFrame {
 
     public GestionarProducto() {
         initComponents();
+        botonmostrar1.setVisible(false);
     }
 
   public void mostrar(){//Método mostrar 
@@ -137,13 +138,13 @@ public void BuscarProductos() {
         tableProducto.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         tableProducto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "idProducto", "nombreProducto", "precioCompra", "precioVenta", "descripcion", "marca", "talla", "categoria"
             }
         ));
         tableProducto.setRowHeight(30);
@@ -235,17 +236,19 @@ public void BuscarProductos() {
         pro.setLocation(x, y);
         MenuPrincipal.deskPane.add(pro);
 
-        if (datoSeleccionado >= 0) {
+        if (datoSeleccionado >= 1) {
             //mandar datos al formulario
-            Producto.NombreProducto.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 0)));
-            Producto.Descripcion.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 1)));
+            Producto.NombreProducto.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 1)));
             Producto.PCompra.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 2)));
             Producto.pVenta.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 3)));
-            Producto.Marca.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 4)));
-            Producto.Talla.enable(false);
+            Producto.Descripcion.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 4)));
+            Producto.Marca.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 5)));
+            Producto.Talla.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 6)));
+            Producto.CantidadDisponible.setText(String.valueOf(tableProducto.getValueAt(datoSeleccionado, 7)));
+            Producto.NombreProducto.enable(false);
             //hacer al frente y visible
             pro.toFront();
-            Producto.GuardarProductos.setVisible(false);
+            Producto.GuardarProductos.setVisible(true);
             pro.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un registro a actualizar");
